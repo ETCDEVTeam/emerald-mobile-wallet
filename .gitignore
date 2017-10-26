@@ -86,6 +86,17 @@ build/
 local.properties
 *.iml
 
+# NDK
+NDK/
+rust/.cargo
+*.apk
+target/
+
+# rust output file
+*.a
+*.so
+.externalNativeBuild
+
 # node.js
 #
 node_modules/

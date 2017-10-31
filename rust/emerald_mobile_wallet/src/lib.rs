@@ -1,4 +1,3 @@
-#[cfg(feature = "jni")]
 #[allow(non_snake_case)]
 pub mod android {
   extern crate jni;

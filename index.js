@@ -1,21 +1,16 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Platform
 } from 'react-native';
-import { MobileAppBridge } from 'NativeModules';
+import { EmeraldBridge } from 'NativeModules';
 
-async function displayHelloWorld (self) {
+async function talkToRust (self) {
   try {
-    let text = await MobileAppBridge.sayHelloWorld("iOS")
+    let text = await EmeraldBridge.talkToRust(Platform.OS)
     self.setState({
       hello: text
     })
@@ -24,19 +19,19 @@ async function displayHelloWorld (self) {
   }
 }
 
-export default class mobile_app extends Component {
+export default class emerald_mobile_wallet extends Component {
 
   state = {}
 
   componentDidMount () {
-    displayHelloWorld(this)
+    talkToRust(this)
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          rust says: {this.state.hello}
+          {this.state.hello}
         </Text>
       </View>
     );
@@ -62,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('mobile_app', () => mobile_app);
+AppRegistry.registerComponent('emerald_mobile_wallet', () => emerald_mobile_wallet);

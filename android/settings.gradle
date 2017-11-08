@@ -1,0 +1,3 @@
+rootProject.name = 'emerald_mobile_wallet'
+
+include ':app'

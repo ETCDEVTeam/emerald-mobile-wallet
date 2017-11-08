@@ -1,0 +1,29 @@
+{
+	"name": "emerald_mobile_wallet",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"build-rust-ios": "cd rust/emerald_mobile_wallet && make ios",
+		"ios": "npm run build-rust-ios && npm run cli run-ios",
+		"build-rust-android": "cd rust/emerald_mobile_wallet && make android",
+		"android": "npm run build-rust-android && npm run cli run-android",
+		"cli": "node node_modules/react-native/local-cli/cli.js",
+		"start": "npm run ios",
+		"test": "jest",
+		"lint": "standard",
+		"commit": "commit-wizard"
+	},
+	"dependencies": {
+		"react": "16.0.0-beta.5",
+		"react-native": "0.49.3"
+	},
+	"devDependencies": {
+		"babel-jest": "21.2.0",
+		"babel-preset-react-native": "4.0.0",
+		"jest": "21.2.1",
+		"react-test-renderer": "16.0.0-beta.5"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
